@@ -1,0 +1,3 @@
+Nome da maquina remota: 127.0.0.1
+IP da maquina remota: 127.0.0.1
+Porta maquina remota: 49795

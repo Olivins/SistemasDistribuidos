@@ -28,8 +28,8 @@ public class Servidor {
             
             endereco_remoto = conexao.getInetAddress();
             porta_remota = conexao.getPort();
-            gravaArq.printf("Nome da maquina remota: " + endereco_remoto.getHostName() + "%n");
-            gravaArq.printf("IP da maquina remota: " + endereco_remoto.getHostAddress() + "%n");
+            gravaArq.printf("Nome da maquina remota: " + endereco_remoto.getHostName());
+            gravaArq.printf("IP da maquina remota: " + endereco_remoto.getHostAddress());
             gravaArq.printf("Porta maquina remota: " + porta_remota);
             salva.close();
             s.close();

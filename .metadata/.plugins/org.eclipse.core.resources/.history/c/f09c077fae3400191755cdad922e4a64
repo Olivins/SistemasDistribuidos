@@ -2,9 +2,7 @@ package pratica1;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -16,10 +14,6 @@ public class Servidor {
             
         	InetAddress endereco_remoto;
         	int porta_remota;
-        	
-        	FileWriter salva = new FileWriter("C:\\Users\\aluno\\Desktop\\Diogo\\salvolivins.txt");
-        	PrintWriter gravaArq = new PrintWriter(salva);
-        	
             ServerSocket s = new ServerSocket(2000);//o server socket tem um serviço que espera conexao (implementado abaixo)
             System.out.println("Esperando conexao..........");
             
@@ -28,11 +22,9 @@ public class Servidor {
             
             endereco_remoto = conexao.getInetAddress();
             porta_remota = conexao.getPort();
-            gravaArq.printf("Nome da maquina remota: " + endereco_remoto.getHostName() + "%n");
-            gravaArq.printf("IP da maquina remota: " + endereco_remoto.getHostAddress() + "%n");
-            gravaArq.printf("Porta maquina remota: " + porta_remota);
-            salva.close();
-            s.close();
+            System.out.println("Nome da maquina remota: " + endereco_remoto.getHostName());
+            System.out.println("IP da maquina remota: " + endereco_remoto.getHostAddress());
+            System.out.println("Porta maquina remota: " + porta_remota);
             
             //agora criamos os 2 canais - in e out para conexao (não sobre o s)
             DataOutputStream saida = new DataOutputStream(conexao.getOutputStream());
